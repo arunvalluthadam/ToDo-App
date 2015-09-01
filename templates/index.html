@@ -17,12 +17,13 @@
 				<input type="text" name="entryTodo" ng-model="entryTodo" required>
 				<button ng-disabled="frm.$invalid">Add to List</button>
 			</form>
-			<button ng-click="clearCompleted()">Clear Completed</button>
+			<button ng-click="clearCompleted(id)">Clear Completed</button>
 			<ul>
+				<p>[[save]]</p>
 				<br>
 				<li ng-repeat="todo in todos">
 					<input type="checkbox" ng-model="todo.done">
-					<span ng-class="{done: todo.done}">[[todo.title]]</span>
+					<span ng-class="{done: todo.done, id: todo.id}">[[todo.title]]</span>
 				</li>
 			</ul>
 		</div>
